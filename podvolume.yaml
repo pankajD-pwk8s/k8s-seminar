@@ -16,4 +16,5 @@ spec:
       mountPath: /storage
   volumes:
   - name: volume1
-    emptyDir: {}
+    hostPath:
+    path: /tmp/files
