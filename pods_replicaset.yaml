@@ -18,11 +18,18 @@ spec:
         tier: frontend
     spec:
       containers:
+      containers:
+      - name: app1
         image: supergiantkir/animals:bear
+        volumeMounts:
+        - name: volume1
+          mountPath: /storage
+      - name: app2
+        image: yanivomc/spring-music:latest
         volumeMounts:
         - name: volume1
           mountPath: /storage
       volumes:
       - name: volume1
         hostPath:
-          path: /tmp/file
+          path: /tmp/files
